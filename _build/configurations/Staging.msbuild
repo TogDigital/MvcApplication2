@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<!-- Path to this file relative to the src root -->
+		<SourceRootRelativePath>..\..\</SourceRootRelativePath>
+
+		<!-- Properties to customise the build -->
+		<BuildFolder>Build\</BuildFolder>
+		<BuildConfiguration>Debug</BuildConfiguration>
+		<SolutionFile>$(SourceRootRelativePath)MvcApplication2.sln</SolutionFile>
+		<WebProjectFile>$(SourceRootRelativePath)MvcApplication2.csproj</WebProjectFile>
+
+
+		<BuildFolderRelativeToProjects>$(BuildFolder)</BuildFolderRelativeToProjects>
+		<SolutionBinFolderRelativeToProjects>$(BuildFolderRelativeToProjects)bin\</SolutionBinFolderRelativeToProjects>
+		<SolutionDir>$(DeployFolder)</SolutionDir>
+		<NugetOutputFolder>$(BuildFolder)packages</NugetOutputFolder>
+	</PropertyGroup>
+
+	<Import Project="../lib/import-targets.msbuild" />
+
+</Project>

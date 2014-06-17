@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="CopyCompiledFilesToOutput" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Target Name="Compile">
+		<Message Text="Compiling solution" Importance="high" />
+
+		<MSBuild Projects="$(SolutionFile)"
+						 Properties="Configuration=$(BuildConfiguration);"
+						 Targets="Build" BuildInParallel="False" ToolsVersion="4.0" UnloadProjectsOnCompletion="False"></MSBuild>
+
+		<Message Text="Finished compiling solution" Importance="high" />
+	</Target>
+
+	<Target Name="CopyCompiledFilesToOutput" DependsOnTargets="Compile">
+		<Message Text="Copying web application files to $(BuildFolderRelativeToProjects)website\" Importance="high" />
+
+		<MakeDir Directories="$(NugetOutputFolder)" />
+
+		<MSBuild Projects="$(WebProjectFile)"
+						 Properties="Configuration=$(BuildConfiguration);
+						 UseWPP_CopyWebApplication=True;
+						 PipelineDependsOnBuild=False;
+						 OutDir=$(SolutionBinFolderRelativeToProjects);
+						 WebProjectOutputDir=$(BuildFolderRelativeToProjects)website\"
+						 Targets="Build" BuildInParallel="False" ToolsVersion="4.0" UnloadProjectsOnCompletion="False"></MSBuild>
+		
+		<Message Text="Finished deploying web applications" Importance="high" />
+	</Target>
+
+</Project>

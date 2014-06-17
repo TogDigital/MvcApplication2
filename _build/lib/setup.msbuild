@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Setup" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Target Name="Setup">
+		<Message Text="$(MSBuildExtensionsPath32)"/>
+
+		<Message Text="Deleting $(BuildFolder)" Importance="high" />
+
+		<RemoveDir Directories="$(BuildFolder)" />
+
+		<Message Text="Finished deleting $(BuildFolder)" Importance="high" />
+	</Target>
+
+</Project>

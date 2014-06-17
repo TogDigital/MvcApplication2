@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>VPH.Internal.MvcApplication2</id>
+		<authors>Erik Ekengren</authors>
+		<description>MvcApplication2</description>
+		<language>en-GB</language>
+		<projectUrl>https://github.com/vphdigital/MvcApplication2</projectUrl>
+		<version>1.0.0</version>
+	</metadata>
+	<files>
+		<file src="..\..\Build\website\**\*" target="" />
+ 	</files>
+ </package>
